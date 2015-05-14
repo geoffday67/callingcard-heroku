@@ -3,9 +3,18 @@ var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
-app.get('/', function(request, response)
+app.get('/reverse', function(request, response)
 {
-  response.send('Hello calling card from Express!');
+  var input = request.query.input;
+  if (!input)
+  {
+  	response.status(404).send('No input string found');
+	return;
+  }
+
+  var output = input.split('').reverse().join('');
+  response.type('text/plain');
+  response.send(output);
 });
 
 app.listen(app.get('port'), function()
