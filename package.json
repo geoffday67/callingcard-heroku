@@ -3,7 +3,7 @@
   "private": true,
   "engines": {
     "node": "0.12.2",
-	"npm": "2.7.4"
+    "npm": "2.7.4"
   },
   "version": "1.0.0",
   "description": "",
@@ -12,5 +12,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
 }

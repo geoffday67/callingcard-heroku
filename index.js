@@ -1,8 +1,14 @@
-var http = require('http');
-var port = process.env.PORT || 5000;
+var express = require('express');
+var app = express();
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello calling card world\n');
-}).listen(port);
-console.log('Server running');
+app.set('port', (process.env.PORT || 5000));
+
+app.get('/', function(request, response)
+{
+  response.send('Hello calling card from Express!');
+});
+
+app.listen(app.get('port'), function()
+{
+  console.log('Node app is running on port', app.get('port'));
+});
